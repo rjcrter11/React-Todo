@@ -26,10 +26,12 @@ class TodoForm extends Component {
         <input
           type="text"
           name="newTodo"
-          value={this.state.item}
+          value={this.state.newTodo}
           onChange={this.handleChange}
         />
-        <button type="submit">Add Todo</button>
+        <button className="todo-btn" type="submit">
+          Add Todo
+        </button>
       </form>
     );
   }

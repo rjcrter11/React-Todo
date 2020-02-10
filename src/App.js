@@ -1,6 +1,7 @@
 import React from "react";
 import TodoForm from "./components/TodoComponents/TodoForm";
 import TodoList from "./components/TodoComponents/TodoList";
+import "./components/TodoComponents/Todo.css";
 const todos = [
   {
     task: "Practice React",
@@ -72,13 +73,13 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
         <div className="header">
           <h3>Todo List: </h3>
-          <TodoForm addTodo={this.addTodo} />
         </div>
         <TodoList
           todos={this.state.todoList}
           toggleTodo={this.toggleTodo}
           delTodo={this.delTodo}
         />
+        <TodoForm className="todo-form" addTodo={this.addTodo} />
       </div>
     );
   }
