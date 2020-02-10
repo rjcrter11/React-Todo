@@ -21,6 +21,7 @@ const todos = [
 ];
 
 class App extends React.Component {
+  todoData;
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
@@ -29,7 +30,6 @@ class App extends React.Component {
     this.state = {
       todoList: todos
     };
-    console.log(todos);
   }
 
   addTodo = (todoName) => {
@@ -38,9 +38,13 @@ class App extends React.Component {
       completed: false,
       task: todoName
     };
+    localStorage.setItem("newTodo", JSON.stringify(newTodo));
+
     this.setState({
       todoList: [...this.state.todoList, newTodo]
     });
+
+    localStorage.getItem("newTodo", newTodo);
   };
 
   toggleTodo = (id) => {
